@@ -31,3 +31,15 @@ Ketika mengetik sesuatu di client, itu akan mengirim pesan ke server, kemudian s
 ## 2.2. Modifying the websocket port
 
 Setelah mengganti port menjadi 8080 di client.rs, sekarang kita harus mengganti port di fungsi main pada server.rs menjadi 8080 juga, agar koneksi dapat tersambung.
+
+## 2.3 Small changes. Add some information to client
+
+![alt text](image-4.png)
+
+Pada `server.rs`, ganti line pada fungsi handle_connection agar mengirim addr juga kepada para client.
+```rust 
+if let Some(text) = msg.as_text() {
+    println!("From client {addr:?} {text:?}");
+    bcast_tx.send(format!("{addr}: {text}"))?;
+}
+```

@@ -27,3 +27,7 @@ dan untuk client, cukup ketik
 `cargo run --bin client` untuk setiap client yang ingin dijalankan.
 
 Ketika mengetik sesuatu di client, itu akan mengirim pesan ke server, kemudian server akan mengirim balik pesan tersebut ke semua client.
+
+## 2.2. Modifying the websocket port
+
+Setelah mengganti port menjadi 8080 di client.rs, sekarang kita harus mengganti port di fungsi main pada server.rs menjadi 8080 juga, agar koneksi dapat tersambung.
